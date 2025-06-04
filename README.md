@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Map Game 🗺️
 
-## Getting Started
+Un jeu interactif de géographie développé avec Next.js où vous pouvez tester vos connaissances des pays du monde.
 
-First, run the development server:
+## Technologies Utilisées
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js 14 - Framework React moderne
+- React 18 - Bibliothèque UI
+- TypeScript - Pour un code typé et plus robuste
+- TailwindCSS - Pour le styling
+- MongoDB - Base de données
+- React Simple Maps - Pour la visualisation cartographique
+- Radix UI - Composants UI accessibles et personnalisables
+
+## Fonctionnalités
+
+- 🌍 Carte interactive du monde
+- 🎯 Quiz sur les pays
+- 📊 Système de score
+- 🔍 Filtres de recherche
+- 📱 Interface responsive et moderne
+
+## Installation
+
+1. Clonez le repository :
+
+```
+git clone <votre-repo-url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Installez les dépendances :
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Lancez le serveur de développement :
 
-## Learn More
+```
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Ouvrez http://localhost:3000 dans votre navigateur.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts Disponibles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- pnpm dev - Lance le serveur de développement
+- pnpm build - Construit l'application pour la production
+- pnpm start - Lance l'application en mode production
+- pnpm lint - Vérifie le code avec ESLint
 
-## Deploy on Vercel
+## Structure du Projet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+├── app/               # Configuration Next.js 
+et pages
+├── src/
+│   ├── components/    # Composants React
+│   ├── context/       # Contextes React
+│   ├── hooks/         # Hooks personnalisés
+│   └── lib/           # Utilitaires et 
+fonctions
+└── public/            # Assets statiques
+```
