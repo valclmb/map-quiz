@@ -25,7 +25,7 @@ Un jeu interactif de géographie développé avec Next.js où vous pouvez tester
 1. Clonez le repository :
 
 ```
-git clone <votre-repo-url>
+git clone https://github.com/valclmb/map-quiz.git
 ```
 
 2. Installez les dépendances :
