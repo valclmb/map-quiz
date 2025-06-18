@@ -8,7 +8,8 @@ Un jeu interactif de géographie développé avec Next.js où vous pouvez tester
 - React 18 - Bibliothèque UI
 - TypeScript - Pour un code typé et plus robuste
 - TailwindCSS - Pour le styling
-- MongoDB - Base de données
+- Fichier JSON local - Données géographiques
+- PostgreSQL - Base de données (pour les fonctionnalités futures)
 - React Simple Maps - Pour la visualisation cartographique
 - Radix UI - Composants UI accessibles et personnalisables
 

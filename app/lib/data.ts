@@ -1,43 +1,29 @@
 "use server";
-import { MongoClient } from "mongodb";
+import fs from "fs";
+import path from "path";
 
-const uri = process.env.MONGODB_URI as string;
-
-const connectToDatabase = async () => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    return client;
-  } catch (error) {
-    console.log("Erreur de connexion à la base de données:", error);
-    throw error; // Relance l'erreur pour la gérer ailleurs si nécessaire
-  }
-};
+// Cache pour éviter de relire le fichier à chaque requête
+let countriesCache: any[] | null = null;
 
 export const getCountries = async (filter?: string[]) => {
-  let client;
   try {
-    client = await connectToDatabase();
-    const db = client.db("map-quiz");
-    const collection = db.collection("map");
-
-    if (filter && filter.length > 0) {
-      const data = await collection
-        .find({
-          "properties.continent": { $nin: filter },
-        })
-        .toArray();
-      return JSON.parse(JSON.stringify(data));
+    // Utiliser le cache si disponible
+    if (!countriesCache) {
+      const filePath = path.join(process.cwd(), "data", "countries.json");
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      countriesCache = JSON.parse(fileContents);
     }
-    const data = await collection.find().toArray();
 
-    return JSON.parse(JSON.stringify(data));
+    // Appliquer le filtre si nécessaire
+    if (filter && filter.length > 0) {
+      return countriesCache?.filter(
+        (country: any) => !filter.includes(country.properties.continent)
+      );
+    }
+
+    return countriesCache;
   } catch (error) {
     console.log("Erreur lors de la récupération des données:", error);
-    throw error; // Relance l'erreur pour la gérer ailleurs si nécessaire
-  } finally {
-    if (client) {
-      client.close();
-    }
+    throw error;
   }
 };
