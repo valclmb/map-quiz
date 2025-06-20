@@ -1,17 +1,16 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 
 const continents = [
-  "Africa",
-  "North America",
-  "South America",
-  "Asia",
+  "Afrique",
+  "Amérique du Nord",
+  "Amérique du Sud",
+  "Asie",
   "Europe",
-  "Oceania",
+  "Océanie",
 ];
 
 type FilterProps = {
@@ -35,11 +34,8 @@ export const Filter = ({ setFilter }: FilterProps) => {
     });
   };
 
-  const session = authClient.useSession();
-  console.log(session);
   return (
-    <nav className="flex gap-3 z-50 p-2 absolute right-1/2 top-5 translate-x-1/2 border border-background bg-background/50 rounded-sm backdrop-blur-md ">
-      <Button onClick={signUp}>Sign up</Button>
+    <nav className="flex gap-3 z-50 p-2 absolute right-1/2 top-5 translate-x-1/2 bg-background rounded-sm shadow-sm  ">
       {continents.map((continent) => (
         <div key={continent} className="flex items-center gap-1">
           <Checkbox

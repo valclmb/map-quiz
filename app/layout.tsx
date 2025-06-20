@@ -1,3 +1,4 @@
+import { Nav } from "@/src/components/Nav/Nav";
 import { Toaster } from "@/src/components/ui/toaster";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -18,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        {children}
+        <div className="min-h-screen flex flex-col  m-auto">
+          <Nav />
+          {children}
+        </div>
+
         <Toaster />
       </body>
     </html>
