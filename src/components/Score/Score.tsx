@@ -26,7 +26,7 @@ export const Score = ({}: ScoreProps) => {
 
   useEffect(() => {});
   return (
-    <div className="absolute border  border-white py-1 px-2 bottom-56 right-1/2 translate-x-1/2 rounded-md bg-background/80 backdrop-blur-md ">
+    <div className="absolute border z-40  border-white py-1 px-2 bottom-56 right-1/2 translate-x-1/2 rounded-md bg-background/80 backdrop-blur-md ">
       {score} / {countries.length}
       <div
         ref={scoreRef}

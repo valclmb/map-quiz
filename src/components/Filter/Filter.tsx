@@ -1,8 +1,6 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
-import { Checkbox } from "../ui/checkbox";
-import { Label } from "../ui/label";
+import { Toggle } from "../ui/toggle";
 
 const continents = [
   "Afrique",
@@ -28,22 +26,17 @@ export const Filter = ({ setFilter }: FilterProps) => {
     });
   };
 
-  const signUp = async () => {
-    await authClient.signIn.social({
-      provider: "google",
-    });
-  };
-
   return (
-    <nav className="flex gap-3 z-50 p-2 absolute right-1/2 top-5 translate-x-1/2 bg-background rounded-sm shadow-sm  ">
+    <nav className="flex gap-3 z-50 p-1 absolute right-1/2 top-3 translate-x-1/2  rounded-sm   ">
       {continents.map((continent) => (
         <div key={continent} className="flex items-center gap-1">
-          <Checkbox
-            defaultChecked
-            value={continent}
-            onCheckedChange={() => handleChange(continent)}
-          />
-          <Label>{continent}</Label>
+          <Toggle
+            defaultPressed
+            // value={continent}
+            onPressedChange={() => handleChange(continent)}
+          >
+            {continent}
+          </Toggle>
         </div>
       ))}
     </nav>

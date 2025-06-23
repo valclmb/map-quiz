@@ -1,5 +1,6 @@
 import { Nav } from "@/src/components/Nav/Nav";
 import { Toaster } from "@/src/components/ui/toaster";
+import { TanstackProvider } from "@/src/lib/query-client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,11 +20,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <div className="min-h-screen flex flex-col  m-auto">
-          <Nav />
-          {children}
-        </div>
-
+        <TanstackProvider>
+          <div className="min-h-screen flex flex-col  m-auto">
+            <Nav />
+            {children}
+          </div>
+        </TanstackProvider>
         <Toaster />
       </body>
     </html>

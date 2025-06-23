@@ -6,6 +6,7 @@ export const useFilter = (countries: GeoJsonProperties[]) => {
   const [filteredCountries, setFilteredCountries] = useState<
     GeoJsonProperties[]
   >([]);
+  console.log(filter);
 
   useEffect(() => {
     setFilteredCountries(

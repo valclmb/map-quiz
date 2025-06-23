@@ -8,6 +8,7 @@ import { Filter } from "../Filter/Filter";
 import { Form } from "../Form/Form";
 import { Map } from "../Map/Map";
 import { Score } from "../Score/Score";
+import { Grid } from "../ui-custom/Grid";
 
 type GameProps = {
   countries: GeoJsonProperties[];
@@ -20,7 +21,9 @@ export const Game = ({ countries }: GameProps) => {
   return (
     <GameContext.Provider value={map}>
       <Filter filter={filter} setFilter={setFilter} />
-      <Map />
+      <Grid>
+        <Map />
+      </Grid>
       <Form />
       <Score />
     </GameContext.Provider>

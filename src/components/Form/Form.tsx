@@ -16,7 +16,7 @@ export const Form = () => {
   const { currentCountry, handleChange, refs, changeIndex } = gameContext;
 
   return (
-    <Card className="absolute right-1/2 bottom-2 translate-x-1/2 bg-background/90 backdrop-blur-md min-w-64">
+    <Card className="absolute right-1/2 bottom-2 translate-x-1/2 z-40 bg-background/90 backdrop-blur-md min-w-64">
       <CardContent className="p-5 space-y-2">
         <div className="flex flex-col">
           <Label htmlFor="name">Pays</Label>
